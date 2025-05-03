@@ -4,7 +4,7 @@ resource "azurerm_linux_virtual_machine" "vm" {
   location                        = var.rg_location
   size                            = var.vm_size
   admin_username                  = var.vm_admin_username
-  network_interface_ids           = nic_id
+  network_interface_ids           = var.nic_id
   admin_password                  = var.admin_password
   disable_password_authentication = false
 
@@ -19,4 +19,6 @@ resource "azurerm_linux_virtual_machine" "vm" {
     sku       = var.image_sku
     version   = var.image_version
   }
+
+  tags = var.vm_tags
 }

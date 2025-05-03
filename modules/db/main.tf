@@ -6,4 +6,7 @@ resource "azurerm_postgresql_flexible_server" "psql" {
   administrator_login           = var.admin_username
   administrator_password        = var.admin_password
   public_network_access_enabled = var.public_network_access_enabled
+  tags                          = var.psql_tags
+  sku_name                      = var.sku_name
+
 }

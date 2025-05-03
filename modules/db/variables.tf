@@ -47,3 +47,16 @@ variable "public_network_access_enabled" {
   default     = true
 
 }
+
+variable "psql_tags" {
+  description = "Tags for the PostgreSQL server."
+  type        = map(string)
+
+}
+
+variable "sku_name" {
+  description = "The SKU name for the PostgreSQL server."
+  type        = string
+  default     = "B_Standard_B1ms"
+
+}

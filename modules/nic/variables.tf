@@ -22,3 +22,9 @@ variable "snet_id" {
   type        = string
 
 }
+
+variable "nic_tags" {
+  description = "Tags for the network interface"
+  type        = map(string)
+
+}

@@ -86,3 +86,8 @@ variable "image_version" {
   default     = "latest"
 
 }
+
+variable "vm_tags" {
+  description = "Tags for the virtual machine"
+  type        = map(string)
+}

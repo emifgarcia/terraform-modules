@@ -8,4 +8,6 @@ resource "azurerm_network_interface" "nic" {
     subnet_id                     = var.snet_id
     private_ip_address_allocation = "Dynamic"
   }
+
+  tags = var.nic_tags
 }
