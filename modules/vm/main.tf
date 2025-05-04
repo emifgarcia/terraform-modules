@@ -1,4 +1,5 @@
 resource "azurerm_linux_virtual_machine" "vm" {
+  count                           = 0
   name                            = var.vm_name
   resource_group_name             = var.rg_name
   location                        = var.rg_location
