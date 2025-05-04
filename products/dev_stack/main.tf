@@ -7,7 +7,7 @@
 #   ╚═════╝  ╚═════╝        ╚═════╝ ╚═╝      ╚═════╝                           
 ################################################################################
 module "rg_modules" {
-  source      = "git::https://github.com/emifgarcia/terraform-modules.git//modules/rg?ref=v1.0.0"
+  source      = "git::https://github.com/emifgarcia/terraform-modules.git//modules/rg?ref=v1.2.0"
   rg_name     = "rg-modules"
   rg_location = "East US"
   rg_tags = {
@@ -25,7 +25,7 @@ module "rg_modules" {
 #   ╚═════╝ ╚═╝  ╚═══╝╚══════╝   ╚═╝                                           
 ################################################################################
 module "vnet_modules" {
-  source             = "git::https://github.com/emifgarcia/terraform-modules.git//modules/vnet?ref=v1.0.0"
+  source             = "git::https://github.com/emifgarcia/terraform-modules.git//modules/vnet?ref=v1.2.0"
   rg_name            = module.rg_modules.rg_name
   rg_location        = module.rg_modules.rg_location
   vnet_name          = "vnet-modules"
@@ -46,7 +46,7 @@ module "vnet_modules" {
 #   ╚══════╝╚═╝  ╚═══╝╚══════╝   ╚═╝                                           
 ################################################################################
 module "snet_modules" {
-  source              = "git::https://github.com/emifgarcia/terraform-modules.git//modules/snet?ref=v1.0.0"
+  source              = "git::https://github.com/emifgarcia/terraform-modules.git//modules/snet?ref=v1.2.0"
   rg_name             = module.rg_modules.rg_name
   vnet_name           = module.vnet_modules.vnet_name
   snet_name           = "snet-modules"
@@ -63,7 +63,7 @@ module "snet_modules" {
 #   ╚═╝  ╚═══╝╚═╝ ╚═════╝                                                  
 ################################################################################
 module "nic_modules" {
-  source      = "git::https://github.com/emifgarcia/terraform-modules.git//modules/nic?ref=v1.0.0"
+  source      = "git::https://github.com/emifgarcia/terraform-modules.git//modules/nic?ref=v1.2.0"
   nic_name    = "nic-modules"
   rg_name     = module.rg_modules.rg_name
   rg_location = module.rg_modules.rg_location
@@ -84,7 +84,7 @@ module "nic_modules" {
 #   ╚═════╝ ╚═╝     ╚═╝                                                   
 ################################################################################
 module "vm_modules" {
-  source      = "git::https://github.com/emifgarcia/terraform-modules.git//modules/vm?ref=v1.0.0"
+  source      = "git::https://github.com/emifgarcia/terraform-modules.git//modules/vm?ref=v1.2.0"
   vm_name     = "vm-modules"
   rg_name     = module.rg_modules.rg_name
   rg_location = module.rg_modules.rg_location
@@ -106,7 +106,7 @@ module "vm_modules" {
 #  ╚═╝      ╚═════╝ ╚══════╝   ╚═╝    ╚═════╝ ╚═╝     ╚══════╝              
 ################################################################################
 module "psql_modules" {
-  source      = "git::https://github.com/emifgarcia/terraform-modules.git//modules/db?ref=v1.0.0"
+  source      = "git::https://github.com/emifgarcia/terraform-modules.git//modules/db?ref=v1.2.0"
   server_name = "psql-modules"
   rg_name     = module.rg_modules.rg_name
   rg_location = module.rg_modules.rg_location
